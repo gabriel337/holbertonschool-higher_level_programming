@@ -5,7 +5,6 @@ if number < 0:
     last_number = number % -10
 else:
     last_number = number % 10
-
 if last_number > 5:
     print("Last digit of {} is {} and is greater than 5".format(number, last_number))
 elif last_number < 6 and last_number != 0:
