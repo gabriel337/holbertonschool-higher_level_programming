@@ -14,5 +14,5 @@ if lnumber > 5:
 elif lnumber == 0:
     print("{} {} is {} and is 0".format(s, number, lnumber))
 else:
-    print("{} {} is {} and is less than 6 and not \
-0".format(s, number, lnumber))
+    print("{} {} is {} and is less than 6 and not\
+ 0".format(s, number, lnumber))
