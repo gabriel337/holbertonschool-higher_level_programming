@@ -1,26 +1,15 @@
 #!/usr/bin/python3
 """
 Module 8-rectangle
+Contains parent class BaseGeometry
+with public instance method area and integer_validator
+
+Contains subclass Rectangle
+with instantiation of private attributes width and height, validated by parent
 """
 
 
-class BaseGeometry:
-    """
-    Methods:
-        area(self)
-        integer_validator(self, name, value)
-    """
-    def area(self):
-        """raises an exception"""
-        raise Exception("area() is not implemented")
-
-    def integer_validator(self, name, value):
-        """checks for input
-        """
-        if type(value) is not int:
-            raise TypeError("{:s} must be an integer".format(name))
-        if value <= 0:
-            raise ValueError("{:s} must be greater than 0".format(name))
+BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
 
 class Rectangle(BaseGeometry):
