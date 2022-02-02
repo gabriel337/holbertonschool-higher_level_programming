@@ -54,4 +54,8 @@ Traceback (most recent call last):
 ...
 TypeError: append() takes exactly one argument (3 given)
 
+>>> my_list.append("a")
+>>> print(my_list)
+['a']
+
 """
