@@ -55,7 +55,14 @@ Traceback (most recent call last):
 TypeError: append() takes exactly one argument (3 given)
 
 >>> my_list.append("a")
+>>> my_list.append(5)
+>>> my_list.append(7)
 >>> print(my_list)
-['a']
+['a', 5, 7]
+
+my_list.print_sorted()
+Traceback (most recent call last):
+...
+TypeError: '<' not supported between instance of 'int' and 'str'
 
 """
