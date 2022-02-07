@@ -32,6 +32,7 @@ class Rectangle(Base):
 
         if value <= 0:
             raise ValueError("width must be > 0")
+
         self.__width = value
 
     @property
@@ -47,7 +48,7 @@ class Rectangle(Base):
 
         if value <= 0:
             raise ValueError("height must be > 0")
-        self.__width = value
+        self.__height = value
 
     @property
     def x(self):
@@ -85,26 +86,37 @@ class Rectangle(Base):
 
     def display(self):
         """ prints rectangle with #'s """
-        for y in range(self.__y):
+        for y in range(self.y):
             print()
-        for columns in range(self.__height):
-            for x in range(self.__x):
+        for columns in range(self.height):
+            for x in range(self.x):
                 print(" ", end="")
-            for rows in range(self.__width):
+            for rows in range(self.width):
                 print("#", end="")
             print()
 
     def __str__(self):
         """ returns id, x, y , width and height """
-        return("[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.__x, self.__y, self.__width, self.__height))
+        return("[Rectangle] ({}) {}/{} - {}/{}"
+               .format(self.id, self.x, self.y, self.width, self.height))
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """ adds input to arguments """
-        try:
-            self.id = args[0]
-            self.__width = args[1]
-            self.__height = args[2]
-            self.__x = args[3]
-            self.__y = args[4]
-        except:
-            pass
+        if len(args) > 0:
+            try:
+                self.id = args[0]
+                self.width = args[1]
+                self.height = args[2]
+                self.x = args[3]
+                self.y = args[4]
+            Exception:
+                pass
+        else:
+            for key, value in kwargs.items():
+                my_dict = {self.width: value, self.id: value,
+                           self.height: value, self.x: value, self.y: value}
+                setattr(my_dict, self.width, value)
+                self.width = setattr(my_dict, key, value)
+                self.x = my_dict[self.x]
+                self.y = my_dict[self.y]
+                self.id = my_dict[self.id]
