@@ -112,5 +112,5 @@ class Rectangle(Base):
             except:
                 pass
         else:
-             for key, value in kwargs.items():
+            for key, value in kwargs.items():
                 setattr(self, key, value)
