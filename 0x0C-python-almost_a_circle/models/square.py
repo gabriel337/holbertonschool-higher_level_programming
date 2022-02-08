@@ -38,11 +38,11 @@ class Square(Rectangle):
                 .format(self.id, self.x, self.y, self.size, self.size))
 
     def update(self, *args, **kwargs):
-         """ adds input to arguments """
-         ls = ['id', 'size', 'x', 'y']
-         if args:
-             for idx in range(len(args)):
+        """ adds input to arguments """
+        ls = ['id', 'size', 'x', 'y']
+        if args:
+            for idx in range(len(args)):
                 setattr(self, ls[idx], args[idx])
-         else:
-             for key, value in kwargs.items():
-                 setattr(self, key, value)
+        else:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
