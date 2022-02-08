@@ -109,14 +109,5 @@ class Rectangle(Base):
                 self.height = args[2]
                 self.x = args[3]
                 self.y = args[4]
-            Exception:
+            except:
                 pass
-        else:
-            for key, value in kwargs.items():
-                my_dict = {self.width: value, self.id: value,
-                           self.height: value, self.x: value, self.y: value}
-                setattr(my_dict, self.width, value)
-                self.width = setattr(my_dict, key, value)
-                self.x = my_dict[self.x]
-                self.y = my_dict[self.y]
-                self.id = my_dict[self.id]
