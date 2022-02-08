@@ -111,3 +111,6 @@ class Rectangle(Base):
                 self.y = args[4]
             except:
                 pass
+        else:
+             for key, value in kwargs.items():
+                setattr(self, key, value)
