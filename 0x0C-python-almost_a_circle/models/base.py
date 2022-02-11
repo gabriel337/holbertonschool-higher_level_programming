@@ -39,3 +39,11 @@ class Base:
                 for obj in list_objs:
                     empty_list.append(obj.to_dictionary())
                 f.write(Base.to_json_string(empty_list))
+
+    @staticmethod
+    def from_json_string(json_string):
+        """  JSON string to dictionary """
+        if json_string is None:
+            return ("[]")
+        else:
+            json.dumps(json_string)
