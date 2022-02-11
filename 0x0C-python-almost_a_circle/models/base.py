@@ -51,5 +51,7 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
+        """ Dictionary to Instance """
         def __init__(self, Rectangle):
+            """ initialize attributes """
             Rectangle.update(self.__width, self__height, self.__id, self__x, self.__y)
