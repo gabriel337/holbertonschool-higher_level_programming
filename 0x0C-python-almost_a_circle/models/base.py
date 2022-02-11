@@ -48,3 +48,8 @@ class Base:
             return emptylist
         else:
             return json.loads(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        def __init__(self, Rectangle):
+            Rectangle.update(self.__width, self__height, self.__id, self__x, self.__y)
