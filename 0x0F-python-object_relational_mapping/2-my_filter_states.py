@@ -18,7 +18,8 @@ if __name__ == "__main__":
 
     # create cursor to exec queries using SQL; match arg given
     cursor = db.cursor()
-    cursor.execute("Select * FROM states Where name LIKE '{:s}' ORDER BY id ASC".format(argv[4]))
+    cursor.execute("Select * FROM states Where name LIKE '{:s}'
+                   ORDER BY id ASC".format(argv[4]))
     for row in cursor.fetchall():
         if row[1] == argv[4]:
             print(row)
