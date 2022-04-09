@@ -14,12 +14,13 @@ if __name__ == "__main__":
                          port=3306,
                          user=argv[1],
                          passwd=argv[2],
-                         db=argv[3])
+                         db=argv[3],
+                         state_search=argv[4])
 
     # create cursor to exec queries using SQL; match arg given
     cursor = db.cursor()
     cursor.execute("Select * FROM states WHERE name LIKE BINARY
-                   '{}' ORDER BY id ASC".format(argv[4]))
+                   '{}' ORDER BY id ASC".format(state_search))
     for row in cursor.fetchall():
         if row[1] == argv[4]:
             print(row)
