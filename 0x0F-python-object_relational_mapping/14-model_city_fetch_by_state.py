@@ -8,9 +8,6 @@ from model_city import City
 from sqlalchemy import create_engine, orm
 
 if __name__ == "__main__":
-    user = argv[1]
-    passwd = argv[2]
-    db = argv[3]
     engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'
                            .format(*argv[1:4]), pool_pre_ping=True)
 
